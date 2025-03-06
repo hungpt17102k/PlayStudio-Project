@@ -1,12 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PickItem : MonoBehaviour
+public abstract class PickItem : MonoBehaviour
 {
-    public void OnPointClick()
+    [SerializeField] protected SpriteRenderer sprite;
+
+    public virtual void Set()
     {
-        Debug.Log("ALo");
+
     }
 
+    public void OnPointClick()
+    {
+        if(GamePlay.Instance.PlayerPickCurrent <= 0)
+        {
+            Debug.Log("No pick left");
+            return;
+        }
+
+        GamePlay.Instance.PlayerPickCurrent--;
+
+        Picked();
+    }
+
+    protected abstract void Picked();
 }
