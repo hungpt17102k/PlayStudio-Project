@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.homemade.leanpool": "2.0.2",
     "com.homemade.modules.audio": "1.1.0",
     "com.homemade.pattern.observer": "1.0.1",
     "com.homemade.save.core": "1.0.2",

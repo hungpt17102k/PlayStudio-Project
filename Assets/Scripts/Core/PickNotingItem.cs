@@ -1,3 +1,4 @@
+using Lean.Pool;
 using UnityEngine;
 
 public class PickNotingItem : PickItem
@@ -11,6 +12,9 @@ public class PickNotingItem : PickItem
 
     protected override void Picked()
     {
-        sprite.color = Color.black;
+        sprite.color = Color.gray;
+
+        // Show effect
+        LeanPool.Spawn(floatingTxt, transform.position, Quaternion.identity).ShowText("Nothing!");
     }
 }

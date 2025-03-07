@@ -1,3 +1,4 @@
+using Lean.Pool;
 using UnityEngine;
 
 public class PickSelectItem : PickItem
@@ -16,5 +17,9 @@ public class PickSelectItem : PickItem
     {
         GamePlay.Instance.PlayerPickCurrent += selectAdd;
         sprite.color = Color.red;
+
+        // Show effect
+        LeanPool.Spawn(floatingTxt, transform.position, Quaternion.identity).ShowText("+1 pick");
+
     }
 }

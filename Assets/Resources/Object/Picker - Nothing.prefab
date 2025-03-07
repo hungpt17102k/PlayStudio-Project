@@ -95,3 +95,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 1299599978965314460}
+  floatingTxt: {fileID: 7517297576941721652, guid: 47dc24916316cda49b479fdfa3d72e8c, type: 3}

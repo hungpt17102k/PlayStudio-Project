@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 8019562716779650349}
+  floatingTxt: {fileID: 7517297576941721652, guid: 47dc24916316cda49b479fdfa3d72e8c, type: 3}
   scoreRange: {x: 100, y: 1000}
 --- !u!212 &8019562716779650349 stripped
 SpriteRenderer:

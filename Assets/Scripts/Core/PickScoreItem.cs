@@ -1,3 +1,5 @@
+using com.homemade.pattern.observer;
+using Lean.Pool;
 using UnityEngine;
 
 public class PickScoreItem : PickItem
@@ -18,8 +20,11 @@ public class PickScoreItem : PickItem
     {
         GamePlay.Instance.Score += score;
 
+        // Show effect
         sprite.color = Color.green;
+        LeanPool.Spawn(floatingTxt, transform.position, Quaternion.identity).ShowText($"+{score}");
 
         GameManager.Instance.SaveScore(GamePlay.Instance.Score);
+        this.PostEvent(EventID.Score_Update);
     }
 }

@@ -12,7 +12,7 @@ public class UIManager : MonoSingleton<UIManager>
     [SerializeField] private GameObject popupBG;
 
     [Header("Extra")]
-    //[SerializeField] private UILoadingScreen loading;
+    [SerializeField] private UILoadingScreen loading;
     //[SerializeField] private UIToastScreen toast;
 
     private Dictionary<string, BaseScreen> screens = new Dictionary<string, BaseScreen>();
@@ -179,12 +179,12 @@ public class UIManager : MonoSingleton<UIManager>
 
     public void ShowLoading(Action onLoad = null)
     {
-        //loading.Loading(onLoad);
+        loading.Loading(onLoad);
     }
 
     public void HideLoading()
     {
-        //loading.HideLoading();
+        loading.HideLoading();
     }
 
     public void SelectedButton()

@@ -8,19 +8,23 @@ public class GameManager : MonoSingleton<GameManager>
 
     private async void Start()
     {
+        UIManager.Instance.ShowLoading();
+
         // Load data
-        LoadScore();
+        GamePlay.Instance.Score = LoadScore();
         await UniTask.DelayFrame(1);
 
         // Show UI
         UIManager.Instance.ShowScreen<UIGameScreen>();
         await UniTask.WaitForSeconds(1f);
 
+        UIManager.Instance.HideLoading();
+
     }
 
-    public void LoadScore()
+    public int LoadScore()
     {
-        PlayerPrefs.GetInt(userScore, 0);
+        return PlayerPrefs.GetInt(userScore, 0);
     }
 
     public void SaveScore(int value)
